@@ -1,0 +1,90 @@
+﻿@{
+    ViewData["Title"] = "Plan 1 bearbeiten";
+}
+@model TrainingsPlanModel
+
+<link rel="stylesheet" href="~/css/plan.css"/>
+
+<h1>Trainingsplan bearbeiten</h1>
+
+<form>
+    <div class="Title-Form">
+        <label asp-for="Title"></label>
+        <input asp-for="Title">
+    </div>
+</form>
+
+<div class="OverView">
+
+
+    <div class="Exercise">
+        <div class="informations">
+            <span class="title">Übung 1</span>
+            <span class="description">Das ist eine Beschreibung</span>
+        </div>
+        <div class="icons">
+            <img src="/img/delete.png" class="icon">
+            <div class="arrows">
+                <img src="/img/arrow_up.png" class="icon">
+                <img src="/img/arrow_down.png" class="icon">
+            </div>
+        </div>
+        <div class="img">
+            <img src="~/img/schulterpresse.jpg">
+        </div>
+
+        <div class="reps">
+            <span>3 Wiederholungen</span>
+        </div>
+
+    </div>
+
+    <div class="Exercise">
+        <div class="informations">
+            <span class="title">Übung 1</span>
+            <span class="description">Das ist eine Beschreibung</span>
+        </div>
+        <div class="icons">
+            <img src="/img/delete.png" class="icon">
+            <div class="arrows">
+                <img src="/img/arrow_up.png" class="icon">
+                <img src="/img/arrow_down.png" class="icon">
+            </div>
+        </div>
+        <div class="img">
+            <img src="~/img/schulterpresse.jpg">
+        </div>
+
+        <div class="reps">
+            <span>3 Wiederholungen</span>
+        </div>
+
+    </div>
+
+    <div class="Exercise">
+        <div class="informations">
+            <span class="title">Übung 1</span>
+            <span class="description">Das ist eine Beschreibung</span>
+        </div>
+        <div class="icons">
+            <img src="/img/delete.png" class="icon">
+            <div class="arrows">
+                <img src="/img/arrow_up.png" class="icon">
+                <img src="/img/arrow_down.png" class="icon">
+            </div>
+        </div>
+        <div class="img">
+            <img src="~/img/schulterpresse.jpg">
+        </div>
+
+        <div class="reps">
+            <span>3 Wiederholungen</span>
+        </div>
+
+    </div>
+
+
+</div>
+<button class="green">Speichern</button>
+
+<button class="green" onclick="window.location.href='@Url.Action("add", "Exercise")'">Übung hinzufügen</button>

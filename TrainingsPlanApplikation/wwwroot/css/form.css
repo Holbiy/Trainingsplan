@@ -1,0 +1,57 @@
+﻿input[type=text], select, textarea, input[type="email"], input[type="number"]{
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+    display: inline;
+    width: 100%;
+}
+
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+
+button[type=submit] {
+    background-color: #04AA6D;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+    margin-top: 20px;
+}
+
+form{
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+label{
+    display: block;
+    margin-top: 5px;
+}
+
+span{
+    display: block;
+    width: 100%;
+    color: red;
+}
+
+input.input-validation-error,
+textarea.input-validation-error,
+select.input-validation-error
+{
+    border-color: red;
+}
+
+@media screen and (max-width: 730px) {
+    label{
+        margin-top: 1px;
+    }
+
+
+}

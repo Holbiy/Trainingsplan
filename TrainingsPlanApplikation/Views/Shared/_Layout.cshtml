@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/StyleSheet.css" />
+    <link rel="stylesheet" href="~/css/navbar.css" />
+    <link rel="stylesheet" href="~/css/footer.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <div id="logo">
+                <a asp-controller="Home" asp-action="Index">
+                    <h1>TraininsPlan Applikation</h1>
+                </a>
+            </div>
+
+            <div id="nav-items">
+                <a class="nav-item" asp-action="Index" asp-controller="Overview">Trainingspläne</a>
+            </div>
+
+            <div id="login">
+                <a class="nav-item" asp-action="Index" asp-controller="Overview">Log in</a>
+            </div>
+        </nav>
+    </header>
+
+    <div id="main">
+        @RenderBody()
+    </div>
+
+
+    <footer>
+        <div class="container">
+            <p>&copy; TrainingsplanApplikation</p>
+            <p>-</p>
+            <a href="">Impressum</a>
+            <a href="">Haftung</a>
+            <a href="">Datenschutz</a>
+        </div>
+    </footer>
+
+
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
+    @RenderSection("Scripts", required: false)
+
+
+    <script>
+        function myFunction() {
+            var x = document.getElementById("nav-items");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
+    </script>
+</body>
+
+</html>

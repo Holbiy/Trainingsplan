@@ -1,0 +1,58 @@
+﻿body {
+    margin: 0;
+    font-family: sans-serif;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+h1 {
+    font-size: 60px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+a:visited{
+    color: black !important;
+}
+
+#main {
+    padding: 0 10% 5vh 10%;
+    width: 100%;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    min-height: 100vh;
+    position: relative;
+}
+
+@media screen and (max-width: 730px) {
+    h1 {
+        font-size: 55px;
+    }
+    h2 {
+        font-size: 30px;
+        margin-top: 0;
+    }
+}
+
+button {
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 10px;
+}
+
+.green {
+    background-color: #4CAF50;
+}
+
+.green:hover{
+    background-color: #3ba33f;
+}
+

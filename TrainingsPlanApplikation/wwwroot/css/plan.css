@@ -1,0 +1,158 @@
+.OverView {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0 !important;
+}
+
+.TrainingsPlan, .Exercise {
+    background-color: #eaeaea;
+    width: 100%;
+    overflow: hidden;
+    padding: 10px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border-radius: 10px;
+}
+.TrainingsPlan, .Exercise:not(:last-child){
+    margin-bottom: 1rem;
+}
+
+.title {
+    font-size: 30px !important;
+    font-weight: bold;
+    color: black;
+}
+
+.description {
+    font-size: 20px;
+    color: black;
+}
+
+.icon:hover{
+    cursor: grab;
+}
+
+/*Trainingsplan Overview*/
+.TrainingsPlan:hover {
+    background-color: #efefef;
+    cursor: grab;
+}
+
+.TrainingsPlan > * {
+    height: 10vh;
+}
+
+.TrainingsPlan .icons {
+    float: right;
+    display: flex;
+    align-items: center;
+}
+
+.TrainingsPlan .icons > * {
+    height: 50%;
+    margin-left: 20px;
+    margin: 0;
+}
+
+.TrainingsPlan .icons > *:not(:first-child) {
+    margin-left: 20px;
+}
+
+.TrainingsPlan .informations {
+    float: left;
+    display: flex;
+    flex-direction: row;
+}
+
+.TrainingsPlan .informations > * {
+    display: flex;
+    align-items: center;
+}
+
+.TrainingsPlan .informations > *:not(:last-child) {
+    margin-right: 20px;
+}
+
+/*Show Plan*/
+
+.Exercise > * {
+    height: 20vh;
+}
+
+.Exercise .informations {
+    display: flex;
+    flex-direction: column;
+    float: left;
+}
+
+.Exercise .img {
+    float: right;
+}
+
+.Exercise .img img {
+    height: 100%;
+    border-radius: 10px;
+}
+
+.Exercise .reps {
+    float: right;
+    display: flex;
+    align-items: center;
+}
+
+.Exercise > *:not(:first-child) {
+    margin-right: 30px;
+}
+
+.description, .reps {
+    font-size: 25px;
+}
+
+/*Edit / Create Plan*/
+
+.Exercise .icons {
+    float: right;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.Exercise .icons .icon {
+    height: 3rem;
+}
+
+.Exercise .icons > *:first-child {
+    margin-right: 30px;
+}
+
+
+.Exercise .icons .arrows .icon {
+    display: block;
+}
+
+.Exercise:first-child .arrows > *:first-child, .Exercise:last-child .arrows > *:last-child {/*Last and first arrows*/
+    display: none;
+}
+
+input{
+    width: 20rem;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    padding: 5px 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+input:focus{
+    
+}
+
+
+label{
+    font-size: 1.5rem;
+}
+
+
+
+

@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "Ent3nw4uzueVTmevvwF/9BIUm4tXp97ZF8UIOmyDn9hPYjbPX1QU3ZZI96pk6FnJlpWzt3eel7ShM0UPFwW0NA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Dario\\source\\repos\\TrainingsPlanApplikation\\TrainingsPlanApplikation\\TrainingsPlanApplikation.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Dario\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
+    "C:\\Users\\Dario\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.15\\microsoft.netcore.app.host.win-x64.3.1.15.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,35 @@
+﻿@{
+    ViewData["Title"] = "Plan 1 bearbeiten";
+}
+@model ExerciseModel
+
+<link rel="stylesheet" href="~/css/form.css"/>
+
+<h1>Übung hinzufügen</h1>
+<form>
+    <label asp-for="Title"></label>
+    <input asp-for="Title">
+    <span asp-validation-for="Title"></span>
+
+    <label asp-for="Description"></label>
+    <input asp-for="Description">
+    <span asp-validation-for="Description"></span>
+
+    <label asp-for="Reps"></label>
+    <input asp-for="Reps">
+    <span asp-validation-for="Reps"></span>
+
+    <label asp-for="Image"></label>
+    <input asp-for="Image" type="file" accept="image/*" >
+    <span asp-validation-for="Image"></span>
+
+    <button type="submit">
+        hinzufügen
+    </button>
+</form>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
