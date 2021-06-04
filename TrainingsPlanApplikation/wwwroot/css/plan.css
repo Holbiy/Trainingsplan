@@ -153,6 +153,117 @@ label{
     font-size: 1.5rem;
 }
 
+@media screen and (max-width: 700px) {
+    .title {
+        font-size: 1rem !important;
+        font-weight: bold;
+        color: black;
+    }
+
+    .descriptions {
+        
+        color: black;
+        display: block;
+    }
+
+    /*Trainingsplan Overview*/
+    .TrainingsPlan > * {
+        height: auto;
+    }
+    
+    .TrainingsPlan .icons{
+        height: 2rem;
+        display: flex;
+        align-items: center;
+    }
+    .TrainingsPlan .icons > * {
+        margin-left: 10px;
+    }
+
+    .TrainingsPlan .icons > *:not(:first-child) {
+        margin-left: 10px;
+    }
+
+    .TrainingsPlan .informations {
+        display: flex;
+        flex-direction: column;
+        width: 55%;
+    }
+    
+    .TrainingsPlan .informations > *:not(:last-child) {
+        margin-right: 10px;
+    }
+
+    /*Show Plan*/
+
+    .Exercise > * {
+        height: auto;
+    }
+
+    .Exercise .informations {
+        display: flex;
+        flex-direction: column;
+        float: left;
+        width: 40%;
+    }
+
+    .Exercise .img {
+        float: right;
+    }
+
+    .Exercise .img img {
+        max-height: 5rem;
+        border-radius: 10px;
+    }
+    
+    .Exercise > *:not(:first-child) {
+        margin-right: 10px;
+    }
+
+    .description, .reps {
+        font-size: 0.7rem !important;
+    }
+
+    /*Edit / Create Plan*/
+
+    .Exercise .icons {
+        float: right;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+    }
+
+    .Exercise .icons .icon {
+        height: 1rem;
+    }
+
+    .Exercise .icons > *:first-child {
+        margin-right: 10px;
+    }
+    
+    .Exercise .icons .arrows .icon {
+        display: block;
+    }
+
+    .Exercise:first-child .arrows > *:first-child, .Exercise:last-child .arrows > *:last-child {/*Last and first arrows*/
+        display: none;
+    }
+
+    input{
+        width: 10rem;
+        font-size: 0.7rem;
+        border-radius: 10px;
+        padding: 5px 5px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+    
+    label{
+        font-size: 0.7rem;
+    }
+
+
+}
 
 
 

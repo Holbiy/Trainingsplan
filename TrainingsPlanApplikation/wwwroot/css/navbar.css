@@ -59,3 +59,29 @@ nav a h1{
     display: flex;
     align-items: center;
 }
+
+
+@media screen and (max-width: 700px) {
+    nav a h1{
+        font-size: 1rem !important;
+        display: block;
+    }
+
+    nav {
+        height: auto;
+        display: block;
+    }
+    
+    nav .nav-item{
+        font-size: 0.7rem;
+        margin: 0;
+    }
+
+    nav > div {
+        display: block !important;
+        float: none !important;
+        align-items: normal;
+        height: auto !important;
+    }
+
+}
