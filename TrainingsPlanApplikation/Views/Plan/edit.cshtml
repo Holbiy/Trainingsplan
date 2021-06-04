@@ -8,15 +8,19 @@
 <h1>Trainingsplan bearbeiten</h1>
 
 <form>
-    <div class="Title-Form">
-        <label asp-for="Title"></label>
-        <input asp-for="Title">
-    </div>
+    <label asp-for="Title"></label>
+    <input asp-for="Title">
+    <span asp-validation-for="Title"></span>
+
+    <label asp-for="Description"></label>
+    <input asp-for="Description">
+    <span asp-validation-for="Description"></span>
+
 </form>
 
+
 <div class="OverView">
-
-
+    
     <div class="Exercise">
         <div class="informations">
             <span class="title">Übung 1</span>

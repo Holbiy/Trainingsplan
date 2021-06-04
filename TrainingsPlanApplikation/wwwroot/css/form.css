@@ -14,8 +14,8 @@ label {
 }
 
 form{
-    border-radius: 5px;
-    background-color: #f2f2f2;
+    border-radius: 10px;
+    background-color: #eaeaea;
     padding: 20px;
 }
 
@@ -24,7 +24,7 @@ label{
     margin-top: 5px;
 }
 
-span{
+form span{
     display: block;
     width: 100%;
     color: red;

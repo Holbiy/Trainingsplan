@@ -19,13 +19,13 @@
 }
 
 .title {
-    font-size: 30px !important;
+    font-size: 2rem !important;
     font-weight: bold;
     color: black;
 }
 
 .description {
-    font-size: 20px;
+    font-size: 1rem;
     color: black;
 }
 
@@ -39,7 +39,7 @@
     cursor: grab;
 }
 
-.TrainingsPlan > * {
+.TrainingsPlan > .icons {
     height: 10vh;
 }
 
@@ -63,6 +63,8 @@
     float: left;
     display: flex;
     flex-direction: row;
+    max-width: 60% !important;
+    min-height: 10vh;
 }
 
 .TrainingsPlan .informations > * {
@@ -76,7 +78,7 @@
 
 /*Show Plan*/
 
-.Exercise > * {
+.Exercise > div:not(.informations) {
     height: 20vh;
 }
 
@@ -84,6 +86,8 @@
     display: flex;
     flex-direction: column;
     float: left;
+    max-width: 50%;
+    min-height: 20vh;
 }
 
 .Exercise .img {
@@ -118,6 +122,7 @@
     align-items: center;
 }
 
+
 .Exercise .icons .icon {
     height: 3rem;
 }
@@ -126,31 +131,12 @@
     margin-right: 30px;
 }
 
-
 .Exercise .icons .arrows .icon {
     display: block;
 }
 
 .Exercise:first-child .arrows > *:first-child, .Exercise:last-child .arrows > *:last-child {/*Last and first arrows*/
     display: none;
-}
-
-input{
-    width: 20rem;
-    font-size: 1.5rem;
-    border-radius: 10px;
-    padding: 5px 5px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-}
-
-input:focus{
-    
-}
-
-
-label{
-    font-size: 1.5rem;
 }
 
 @media screen and (max-width: 700px) {

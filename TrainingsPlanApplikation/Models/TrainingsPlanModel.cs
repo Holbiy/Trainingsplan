@@ -10,6 +10,11 @@ namespace TrainingsPlanApplikation.Models
         [StringLength(15)]
         [Display(Name = "Titel")]
         public string Title { get; set; }
+        
+        [Required]
+        [StringLength(15)]
+        [Display(Name = "Beschreibung")]
+        public string Description { get; set; }
 
         public List<ExerciseModel> Exercises { get; set; } = new List<ExerciseModel>();
     }

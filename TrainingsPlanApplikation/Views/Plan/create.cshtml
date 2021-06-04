@@ -4,40 +4,23 @@
 @model TrainingsPlanModel
 
 <link rel="stylesheet" href="~/css/plan.css"/>
+<link rel="stylesheet" href="~/css/form.css"/>
 
 <h1>Trainingsplan erstellen</h1>
 
 <form>
-        <div class="Title-Form">
-            <label asp-for="Title"></label>
-            <input asp-for="Title">
-        </div>
-    </form>
+    <label asp-for="Title"></label>
+    <input asp-for="Title">
+    <span asp-validation-for="Title"></span>
+
+    <label asp-for="Description"></label>
+    <input asp-for="Description">
+    <span asp-validation-for="Description"></span>
+
+</form>
 
 <div class="OverView">
-    
-    
-    <div class="Exercise">
-        <div class="informations">
-            <span class="title">Übung 1</span>
-            <span class="description">Das ist eine Beschreibung</span>
-        </div>
-        <div class="icons">
-            <img src="/img/delete.png" class="icon">
-            <div class="arrows">
-                <img src="/img/arrow_up.png" class="icon">
-                <img src="/img/arrow_down.png" class="icon">
-            </div>
-        </div>
-        <div class="img">
-            <img src="~/img/schulterpresse.jpg">
-        </div>
 
-        <div class="reps">
-            <span>3 Wiederholungen</span>
-        </div>
-
-    </div>
 
     <div class="Exercise">
         <div class="informations">
@@ -65,6 +48,28 @@
         <div class="informations">
             <span class="title">Übung 1</span>
             <span class="description">Das ist eine Beschreibung</span>
+        </div>
+        <div class="icons">
+            <img src="/img/delete.png" class="icon">
+            <div class="arrows">
+                <img src="/img/arrow_up.png" class="icon">
+                <img src="/img/arrow_down.png" class="icon">
+            </div>
+        </div>
+        <div class="img">
+            <img src="~/img/schulterpresse.jpg">
+        </div>
+
+        <div class="reps">
+            <span>3 Wiederholungen</span>
+        </div>
+
+    </div>
+
+    <div class="Exercise">
+        <div class="informations">
+            <span class="title">Übung 1</span>
+            <span class="description">Das ist eine Beschreibung. Das ist eine Beschreibung. Das ist eine Beschreibung. Das ist eine Beschreibung.Das ist eine Beschreibung. Das ist eine Beschreibung. Das ist eine Beschreibung. Das ist eine Beschreibung. Das ist eine Beschreibung. Das ist eine Beschreibung</span>
         </div>
         <div class="icons">
             <img src="/img/delete.png" class="icon">
@@ -85,6 +90,6 @@
 
 
 </div>
-    <button class="green">Erstellen</button>
+<button class="green">Erstellen</button>
 
 <button class="green" onclick="window.location.href='@Url.Action("add", "Exercise")'">Übung hinzufügen</button>
