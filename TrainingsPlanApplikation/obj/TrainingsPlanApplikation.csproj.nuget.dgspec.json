@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Dario\\source\\repos\\TrainingsPlanApplikation\\TrainingsPlanApplikation\\TrainingsPlanApplikation.csproj": {}
+    "C:\\Users\\Dario\\source\\repos\\backup\\TrainingsPlanApplikation\\TrainingsPlanApplikation.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Dario\\source\\repos\\TrainingsPlanApplikation\\TrainingsPlanApplikation\\TrainingsPlanApplikation.csproj": {
+    "C:\\Users\\Dario\\source\\repos\\backup\\TrainingsPlanApplikation\\TrainingsPlanApplikation.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dario\\source\\repos\\TrainingsPlanApplikation\\TrainingsPlanApplikation\\TrainingsPlanApplikation.csproj",
+        "projectUniqueName": "C:\\Users\\Dario\\source\\repos\\backup\\TrainingsPlanApplikation\\TrainingsPlanApplikation.csproj",
         "projectName": "TrainingsPlanApplikation",
-        "projectPath": "C:\\Users\\Dario\\source\\repos\\TrainingsPlanApplikation\\TrainingsPlanApplikation\\TrainingsPlanApplikation.csproj",
+        "projectPath": "C:\\Users\\Dario\\source\\repos\\backup\\TrainingsPlanApplikation\\TrainingsPlanApplikation.csproj",
         "packagesPath": "C:\\Users\\Dario\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dario\\source\\repos\\TrainingsPlanApplikation\\TrainingsPlanApplikation\\obj\\",
+        "outputPath": "C:\\Users\\Dario\\source\\repos\\backup\\TrainingsPlanApplikation\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Dario\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,9 +40,19 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
-            "Dapper": {
+            "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[2.0.90, )"
+              "version": "[5.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.7, )"
             },
             "System.Data.SqlClient": {
               "target": "Package",

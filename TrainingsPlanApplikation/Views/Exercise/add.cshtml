@@ -1,7 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Übung hinzufügen";
 }
-@model ExerciseModel
+@model TrainingsPlanApplikation.Models.Domain.Exercise
 
 <link rel="stylesheet" href="~/css/form.css"/>
 <link rel="stylesheet" href="~/css/StyleSheet.css"/>
@@ -21,9 +21,9 @@
     <input asp-for="Reps">
     <span asp-validation-for="Reps"></span>
 
-    <label asp-for="Image"></label>
+    @*<label asp-for="Image"></label>
     <input asp-for="Image" type="file" accept="image/*" >
-    <span asp-validation-for="Image"></span>
+    <#<span asp-validation-for="Image"></span>*@
 
     <br>
     <button type="submit" class="green">

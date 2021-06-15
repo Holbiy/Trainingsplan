@@ -2,41 +2,50 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
-using System.Threading.Tasks;
-using TrainingsPlanApplikation.Models;
+using TrainingsPlanApplikation.DataAccess;
+using TrainingsPlanApplikation.Models.Domain;
+using TrainingsPlanApplikation.Models.ViewModel;
 
 namespace TrainingsPlanApplikation.Controllers
 {
 	public class PlanController : Controller
 	{
 		private readonly ILogger<PlanController> _logger;
+		private readonly ITrainingPlanRepository _trainingPlanRepository;
 
-		public PlanController(ILogger<PlanController> logger)
+		public PlanController(ILogger<PlanController> logger, ITrainingPlanRepository trainingPlanRepository)
 		{
 			_logger = logger;
+			_trainingPlanRepository = trainingPlanRepository;
 		}
 
-		public IActionResult show()
+		public IActionResult Index()
+		{
+			var model = new ShowAllTrainingPlansViewModel()
+			{
+				TrainingPlans = _trainingPlanRepository.GetAllTrainingPlans().ToList()
+			};
+			return View(model);
+		}
+
+		public IActionResult Show(int id)
+		{
+			var trainingsPlan = _trainingPlanRepository.GetTrainingPlanById(id);
+			if(trainingsPlan == null)
+				return View("Index");
+
+			return View(trainingsPlan);
+		}
+
+		public IActionResult Edit()
 		{
 			return View();
 		}
 
-		public IActionResult edit()
+		public IActionResult Create()
 		{
 			return View();
-		}
-
-		public IActionResult create()
-		{
-			return View();
-		}
-
-		[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-		public IActionResult Error()
-		{
-			return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
 		}
 	}
 }

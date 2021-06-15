@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "TrainingsPläne";
+}
+@model TrainingsPlanApplikation.Models.ViewModel.ShowAllTrainingPlansViewModel
+
+<link rel="stylesheet" href="~/css/plan.css"/>
+
+<h1>TrainingsPläne</h1>
+<h2>Eine Übersicht von allen TrainingsPlänen</h2>
+
+
+<div class="Overview">
+
+    @foreach (var trainingsplan in Model.TrainingPlans)
+    {
+        <div class="TrainingsPlan" onclick="window.location.href='@Url.Action("Show", "Plan", new { id = trainingsplan.Id })';">
+            <div class="informations">
+                <span class="title">@trainingsplan.Title</span>
+                <span class="description">@trainingsplan.Description</span>
+            </div>
+
+            <div class="icons">
+                <img src="~/img/download.png" alt="" class="icon">
+                <img onclick="window.event.stopPropagation(); window.location.href='@Url.Action("edit", "Plan")';" src="~/img/edit.png" alt="" class="icon">
+                <img src="img/delete.png" class="icon">
+            </div>
+        </div>
+    }
+</div>
+
+<button class="green" onclick="window.location.href='@Url.Action("Create", "Plan")'">Trainingsplan hinzufügen</button>

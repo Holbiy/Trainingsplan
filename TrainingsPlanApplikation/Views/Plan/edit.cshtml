@@ -1,7 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Plan 1 bearbeiten";
 }
-@model TrainingsPlanModel
+@model TrainingsPlanApplikation.Models.Domain.TrainingPlan
 
 <link rel="stylesheet" href="~/css/plan.css"/>
 <link rel="stylesheet" href="~/css/form.css"/>
@@ -69,4 +69,4 @@
 </div>
 <button class="green">Speichern</button>
 
-<button class="green" onclick="window.location.href='@Url.Action("add", "Exercise")'">Übung hinzufügen</button>
+<button class="green" onclick="window.location.href='@Url.Action("Add", "Exercise")'">Übung hinzufügen</button>
