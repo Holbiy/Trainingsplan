@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using TrainingsPlanApplikation.Models.Domain;
 
 namespace TrainingsPlanApplikation.DataAccess
@@ -14,7 +13,7 @@ namespace TrainingsPlanApplikation.DataAccess
 
 		void SaveTrainingPlan(TrainingPlan trainingPlan);
 
-		void EditTrainingPlan(TrainingPlan trainingPlan);
+		void UpdateTrainingPlan(TrainingPlan trainingPlan);
 
 	}
 }

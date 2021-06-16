@@ -33,7 +33,7 @@ namespace TrainingsPlanApplikation.DataAccess
             {
                 new TrainingPlan(){Title = "Schultern", Description = "Ein Trainingsplan um die Schultern zu trainieren.", Exercises = new List<Exercise>(){exercises[0]}},
                 new TrainingPlan(){Title = "Beine", Description = "Ein Trainingsplan um die Beine zu trainieren", Exercises = new List<Exercise>(){exercises[1]}},
-                new TrainingPlan(){Title = "Ganzkörper", Description = "Ein anstrengendes Training für den den ganzen Körper.", Exercises = new List<Exercise>(){exercises[0]}}
+                new TrainingPlan(){Title = "Ganzkörper", Description = "Ein anstrengendes Training für den den ganzen Körper.", Exercises = new List<Exercise>(){exercises[2]}}
             };
             foreach (var trainingsPlan in trainingsPlans)
             {

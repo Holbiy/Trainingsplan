@@ -1,72 +1,53 @@
 ﻿@{
     ViewData["Title"] = "Plan 1 bearbeiten";
 }
+@using TrainingsPlanApplikation.Models.ViewModel
 @model TrainingsPlanApplikation.Models.Domain.TrainingPlan
 
-<link rel="stylesheet" href="~/css/plan.css"/>
-<link rel="stylesheet" href="~/css/form.css"/>
+<link rel="stylesheet" href="~/css/plan.css" />
+<link rel="stylesheet" href="~/css/form.css" />
 
 <h1>Trainingsplan bearbeiten</h1>
 
-<form>
+<form asp-action="Update">
     <label asp-for="Title"></label>
-    <input asp-for="Title">
+    <input asp-for="Title" value="@Model.Title">
     <span asp-validation-for="Title"></span>
 
     <label asp-for="Description"></label>
-    <input asp-for="Description">
+    <input asp-for="Description" value="@Model.Description">
     <span asp-validation-for="Description"></span>
 
+
+
+    <div class="OverView">
+        @foreach (var exercise in Model.Exercises)
+        {
+            <div class="Exercise">
+                <div class="informations">
+                    <span class="title">@exercise.Title</span>
+                    <span class="description">@exercise.Description</span>
+                </div>
+                <div class="icons">
+                    <img src="/img/delete.png" class="icon">
+                    <div class="arrows">
+                        <img src="/img/arrow_up.png" class="icon">
+                        <img src="/img/arrow_down.png" class="icon">
+                    </div>
+                </div>
+                <div class="img">
+                    <img src="~/img/schulterpresse.jpg">
+                </div>
+
+                <div class="reps">
+                    <span>@exercise.Reps Wiederholungen</span>
+                </div>
+
+            </div>
+        }
+    </div>
+    <button class="green" type="submit">Speichern</button>
 </form>
 
 
-<div class="OverView">
-    
-    <div class="Exercise">
-        <div class="informations">
-            <span class="title">Cruches</span>
-            <span class="description">Bei den Crunches liegt man auf dem Boden und versucht mit seiner eigenen Bauchmusken sich hochzudrücken.</span>
-        </div>
-        <div class="icons">
-            <img src="/img/delete.png" class="icon">
-            <div class="arrows">
-                <img src="/img/arrow_up.png" class="icon">
-                <img src="/img/arrow_down.png" class="icon">
-            </div>
-        </div>
-        <div class="img">
-            <img src="~/img/schulterpresse.jpg">
-        </div>
-
-        <div class="reps">
-            <span>13 Wiederholungen</span>
-        </div>
-
-    </div>
-
-    <div class="Exercise">
-        <div class="informations">
-            <span class="title">Schulterpresse</span>
-            <span class="description">Bei der Schulterpresse nimmt man zwei kurzhanteln und drückt diese mit seiner Schulterkraft nach oben. Dabei ist ein gerader Rücken sehr wichtig.</span>
-        </div>
-        <div class="icons">
-            <img src="/img/delete.png" class="icon">
-            <div class="arrows">
-                <img src="/img/arrow_up.png" class="icon">
-                <img src="/img/arrow_down.png" class="icon">
-            </div>
-        </div>
-        <div class="img">
-            <img src="~/img/schulterpresse.jpg">
-        </div>
-
-        <div class="reps">
-            <span>3 Wiederholungen</span>
-        </div>
-
-    </div>
-
-</div>
-<button class="green">Speichern</button>
-
-<button class="green" onclick="window.location.href='@Url.Action("Add", "Exercise")'">Übung hinzufügen</button>
+<button class="green" onclick="window.location.href='@Url.Action("Add", "Exercise")'" disabled>Übung hinzufügen</button>

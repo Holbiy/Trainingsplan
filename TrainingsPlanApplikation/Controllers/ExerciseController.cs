@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using TrainingsPlanApplikation.Models.Domain;
+using TrainingsPlanApplikation.Models.ViewModel;
 
 namespace TrainingsPlanApplikation.Controllers
 {
@@ -12,11 +14,17 @@ namespace TrainingsPlanApplikation.Controllers
             _logger = logger;
         }
 
-        public IActionResult add()
+        public IActionResult add(TrainingPlan trainingPlan)
         {
-            return View();
+
+            var model = new AddExerciseViewModel() {TrainingPlan = trainingPlan};
+            return View(model); 
         }
 
-        
+
+        public IActionResult AddExerciseToPlan(AddExerciseViewModel model)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

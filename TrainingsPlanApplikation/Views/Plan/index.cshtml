@@ -21,11 +21,13 @@
 
             <div class="icons">
                 <img src="~/img/download.png" alt="" class="icon">
-                <img onclick="window.event.stopPropagation(); window.location.href='@Url.Action("edit", "Plan")';" src="~/img/edit.png" alt="" class="icon">
-                <img src="img/delete.png" class="icon">
+                <img onclick="window.event.stopPropagation(); window.location.href='@Url.Action("edit", "Plan",new { id = trainingsplan.Id })';" src="~/img/edit.png" alt="" class="icon">
+                <img onclick="window.event.stopPropagation(); window.location.href='@Url.Action("delete", "Plan",new { id = trainingsplan.Id })';" src="img/delete.png" class="icon">
             </div>
         </div>
     }
 </div>
 
 <button class="green" onclick="window.location.href='@Url.Action("Create", "Plan")'">Trainingsplan hinzufügen</button>
+
+

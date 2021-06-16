@@ -29,6 +29,17 @@ namespace TrainingsPlanApplikation.Controllers
 			return View(model);
 		}
 
+        public IActionResult Delete(int id)
+        {
+            var trainingsplan = _trainingPlanRepository.GetTrainingPlanById(id);
+            if (trainingsplan == null)
+                return RedirectToAction(nameof(Index));
+
+            _trainingPlanRepository.DeleteTrainingPlan(trainingsplan);
+
+			return RedirectToAction(nameof(Index));
+		}
+
 		public IActionResult Show(int id)
 		{
 			var trainingsPlan = _trainingPlanRepository.GetTrainingPlanById(id);
@@ -38,14 +49,25 @@ namespace TrainingsPlanApplikation.Controllers
 			return View(trainingsPlan);
 		}
 
-		public IActionResult Edit()
+		public IActionResult Edit(int id)
 		{
-			return View();
+            var trainingsPlan = _trainingPlanRepository.GetTrainingPlanById(id);
+            if (trainingsPlan == null)
+                return View("Index");
+
+			return View(trainingsPlan);
 		}
 
 		public IActionResult Create()
 		{
 			return View();
 		}
-	}
+
+		[HttpPost]
+        public IActionResult Update(TrainingPlan trainingPlan)
+        {
+            _trainingPlanRepository.UpdateTrainingPlan(trainingPlan);
+            return RedirectToAction("Index");
+        }
+    }
 }

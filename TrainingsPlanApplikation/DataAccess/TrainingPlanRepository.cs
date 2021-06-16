@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 using TrainingsPlanApplikation.Models.Domain;
 
 namespace TrainingsPlanApplikation.DataAccess
@@ -20,14 +22,17 @@ namespace TrainingsPlanApplikation.DataAccess
 
 		public TrainingPlan GetTrainingPlanById(int id)
 		{
-			return _context.TrainingPlans.SingleOrDefault(trainingPlan => trainingPlan.Id == id);
+			return _context.TrainingPlans.Include(t => t.Exercises).SingleOrDefault(trainingPlan => trainingPlan.Id == id);
 		}
 
 		public void DeleteTrainingPlan(TrainingPlan trainingPlan)
 		{
 			_context.Remove(trainingPlan);
-			_context.SaveChanges();
-		}
+            foreach (var exercise in trainingPlan.Exercises.ToList())
+                _context.Exercises.Remove(exercise);
+
+            _context.SaveChanges();
+        }
 
 		public void SaveTrainingPlan(TrainingPlan trainingPlan)
 		{
@@ -35,9 +40,16 @@ namespace TrainingsPlanApplikation.DataAccess
 			_context.SaveChanges();
 		}
 
-		public void EditTrainingPlan(TrainingPlan trainingPlan)
-		{
-			throw new System.NotImplementedException();
-		}
+		public void UpdateTrainingPlan(TrainingPlan trainingPlan)
+        {
+            var newTrainingsPlan = _context.TrainingPlans.SingleOrDefault(t => t.Id == trainingPlan.Id);
+
+            newTrainingsPlan.Exercises = trainingPlan.Exercises;
+            newTrainingsPlan.Description = trainingPlan.Description;
+            newTrainingsPlan.Title = trainingPlan.Title;
+
+            _context.SaveChanges();
+        }
+
 	}
 }
