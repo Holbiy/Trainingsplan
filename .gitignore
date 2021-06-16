@@ -1,0 +1,62 @@
+# ignore compiled stuff
+*.exe
+*.cache
+*.pdb
+*.dll.config
+*.dll
+
+Source/MyPilatus.WebUI.SeleniumTest/GoogleChromePortable/Data/*
+Source/MyPilatus.WebUI.SeleniumTest/GoogleChromePortable/App/Chrome-bin/Dictionaries/*.bdic
+
+# Include Chrome Portable Folder
+!Source/MyPilatus.WebUI.SeleniumTest/GoogleChromePortable/App/Chrome-bin/*.exe
+!Source/MyPilatus.WebUI.SeleniumTest/GoogleChromePortable/App/Chrome-bin/**/*.pdb
+!Source/MyPilatus.WebUI.SeleniumTest/GoogleChromePortable/App/Chrome-bin/**/*.dll.config
+!Source/MyPilatus.WebUI.SeleniumTest/GoogleChromePortable/App/Chrome-bin/**/*.dll
+
+
+# folders
+obj
+bin
+Exports
+TestResults
+logs
+.vs
+
+# Exclude NuGet
+Source/packages/*
+
+# Include Tools
+!Tools/*
+
+# Include Deployable Dependency Assemblies
+!*/_bin_deployableAssemblies/*
+
+# include dlls if they are in the CommonReferences directory
+!*CommonReferences/*.dll
+
+# include the Selenium IEDriverServer.exe
+!Source/MyPilatus.WebUI.SeleniumTest/IEDriverServer.exe
+
+# include the NuGet package restore exe file
+!Source/.nuget/NuGet.exe
+
+# vs stuff
+*.suo
+*.csproj.user
+
+# ReSharper stuff
+Source/_ReSharper*/
+*.sln.DotSettings.user
+
+# StyleCop stuff
+Source/StyleCop.Cache
+/Source/.vs
+
+# AxoCover is a Code Coverage Tool
+.axoCover/*
+.axoCover/
+
+# AxoCover Test Coverage
+Source/.axoCover
+/Source/MyPilatus.WebUI.SeleniumTest/GoogleChromePortable/App/Chrome-bin/debug.log
