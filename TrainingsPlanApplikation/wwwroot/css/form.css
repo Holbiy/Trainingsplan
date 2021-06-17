@@ -13,7 +13,7 @@ label {
     display: inline-block;
 }
 
-form{
+.form{
     border-radius: 10px;
     background-color: #eaeaea;
     padding: 20px;

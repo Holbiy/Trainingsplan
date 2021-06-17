@@ -58,16 +58,29 @@ namespace TrainingsPlanApplikation.Controllers
 			return View(trainingsPlan);
 		}
 
-		public IActionResult Create()
+		public IActionResult Add()
 		{
 			return View();
 		}
+
+        public IActionResult Create(TrainingPlan trainingPlan)
+        {
+			_trainingPlanRepository.AddTrainingPlan(trainingPlan);
+            return RedirectToAction("index");
+        }
 
 		[HttpPost]
         public IActionResult Update(TrainingPlan trainingPlan)
         {
             _trainingPlanRepository.UpdateTrainingPlan(trainingPlan);
             return RedirectToAction("Index");
+        }
+
+        public IActionResult DeleteExercise(int trainingPlanId, int exerciseId)
+        {
+            _trainingPlanRepository.DeleteExerciseById(exerciseId);
+
+			return RedirectToAction("Edit", new {id = trainingPlanId});
         }
     }
 }

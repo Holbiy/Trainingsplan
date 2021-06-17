@@ -1,0 +1,58 @@
+﻿@{
+    ViewData["Title"] = "Plan 1 bearbeiten";
+}
+@model TrainingsPlanApplikation.Models.Domain.TrainingPlan
+
+<link rel="stylesheet" href="~/css/plan.css" />
+<link rel="stylesheet" href="~/css/form.css" />
+
+<h1>Trainingsplan erstellen</h1>
+
+<form asp-action="Create">
+    <div class="form">
+        <label asp-for="Title"></label>
+        <input asp-for="Title">
+        <span asp-validation-for="Title"></span>
+
+        <label asp-for="Description"></label>
+        <input asp-for="Description">
+        <span asp-validation-for="Description"></span>
+
+
+        @*<div class="OverView">
+                @if (Model != null && Model.Exercises != null)
+                {
+                    @foreach (var exercise in Model.Exercises)
+                    {
+                        <div class="Exercise">
+                            <div class="informations">
+                                <span class="title">@exercise.Title</span>
+                                <span class="description">@exercise.Description</span>
+                            </div>
+                            <div class="icons">
+                                <img src="/img/delete.png" class="icon">
+                                <div class="arrows">
+                                    <img src="/img/arrow_up.png" class="icon">
+                                    <img src="/img/arrow_down.png" class="icon">
+                                </div>
+                            </div>
+                            <div class="img">
+                                <img src="~/img/schulterpresse.jpg">
+                            </div>
+
+                            <div class="reps">
+                                <span>5 Wiederholungen</span>
+                            </div>
+
+                        </div>
+                    }
+                }
+                else
+                {
+                    <p>Keine Übungen vorhanden.</p>
+                }
+
+            </div>*@
+        <button type="submit" class="green">Erstellen</button>
+    </div>
+</form>

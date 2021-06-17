@@ -11,9 +11,13 @@ namespace TrainingsPlanApplikation.DataAccess
 
 		void DeleteTrainingPlan(TrainingPlan trainingPlan);
 
-		void SaveTrainingPlan(TrainingPlan trainingPlan);
+		void AddTrainingPlan(TrainingPlan trainingPlan);
 
 		void UpdateTrainingPlan(TrainingPlan trainingPlan);
 
-	}
+        void DeleteExerciseById(int id);
+
+        void AddExerciseToTrainingPlan(int trainingPlanId, Exercise exercise);
+
+    }
 }

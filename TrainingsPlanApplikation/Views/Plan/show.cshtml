@@ -9,19 +9,27 @@
 <h2>@Model.Description</h2>
 
 <div class="Overview">
-	@foreach (var exercise in Model.Exercises)
-	{
-		<div class="Exercise">
-			<div class="informations">
-				<span class="title">@exercise.Title</span>
-				<span class="description">@exercise.Description</span>
-			</div>
-			<div class="img">
-				<img src="~/img/schulterpresse.jpg">
-			</div>
-			<div class="reps">
-				<span>@exercise.Reps Wiederholungen</span>
-			</div>
-		</div>
-	}
+    
+    @if (Model != null && Model.Exercises != null && Model.Exercises.Count > 0)
+    {
+        @foreach (var exercise in Model.Exercises)
+        {
+            <div class="Exercise">
+                <div class="informations">
+                    <span class="title">@exercise.Title</span>
+                    <span class="description">@exercise.Description</span>
+                </div>
+                <div class="img">
+                    <img src="~/img/schulterpresse.jpg">
+                </div>
+                <div class="reps">
+                    <span>@exercise.Reps Wiederholungen</span>
+                </div>
+            </div>
+        }
+    }
+    else
+    {
+    <p>Keine Übungen vorhanden.</p>
+    }
 </div>

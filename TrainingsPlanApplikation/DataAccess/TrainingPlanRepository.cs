@@ -34,22 +34,32 @@ namespace TrainingsPlanApplikation.DataAccess
             _context.SaveChanges();
         }
 
-		public void SaveTrainingPlan(TrainingPlan trainingPlan)
+		public void AddTrainingPlan(TrainingPlan trainingPlan)
 		{
 			_context.Add(trainingPlan);
 			_context.SaveChanges();
 		}
 
-		public void UpdateTrainingPlan(TrainingPlan trainingPlan)
+		public void UpdateTrainingPlan(TrainingPlan newTrainingPlan)
         {
-            var newTrainingsPlan = _context.TrainingPlans.SingleOrDefault(t => t.Id == trainingPlan.Id);
+            var oldTrainingsPlan = GetTrainingPlanById(newTrainingPlan.Id);
 
-            newTrainingsPlan.Exercises = trainingPlan.Exercises;
-            newTrainingsPlan.Description = trainingPlan.Description;
-            newTrainingsPlan.Title = trainingPlan.Title;
-
+            oldTrainingsPlan.Description = newTrainingPlan.Description;
             _context.SaveChanges();
         }
 
-	}
+        public void DeleteExerciseById(int id)
+        {
+            var exercise = _context.Exercises.SingleOrDefault(x => x.Id == id);
+            _context.Remove(exercise);
+            _context.SaveChanges();
+        }
+
+        public void AddExerciseToTrainingPlan(int trainingPlanId, Exercise exercise)
+        {
+            var trainingPlan = GetTrainingPlanById(trainingPlanId);
+			trainingPlan.Exercises.Add(exercise);
+            _context.SaveChanges();
+        }
+    }
 }

@@ -10,17 +10,22 @@
 <h1>Trainingsplan bearbeiten</h1>
 
 <form asp-action="Update">
-    <label asp-for="Title"></label>
-    <input asp-for="Title" value="@Model.Title">
-    <span asp-validation-for="Title"></span>
+    <div class="form">
+        <label asp-for="Title"></label>
+        <input asp-for="Title" value="@Model.Title">
+        <span asp-validation-for="Title"></span>
 
-    <label asp-for="Description"></label>
-    <input asp-for="Description" value="@Model.Description">
-    <span asp-validation-for="Description"></span>
+        <label asp-for="Description"></label>
+        <input asp-for="Description" value="@Model.Description">
+        <span asp-validation-for="Description"></span>
+    </div>
+
 
 
 
     <div class="OverView">
+    @if (Model != null && Model.Exercises != null && Model.Exercises.Count > 0)
+    {
         @foreach (var exercise in Model.Exercises)
         {
             <div class="Exercise">
@@ -29,7 +34,7 @@
                     <span class="description">@exercise.Description</span>
                 </div>
                 <div class="icons">
-                    <img src="/img/delete.png" class="icon">
+                    <img src="/img/delete.png" class="icon" onclick="window.event.stopPropagation(); window.location.href='@Url.Action("DeleteExercise", "Plan",new { trainingPlanId = Model.Id, exerciseID= exercise.Id })';">
                     <div class="arrows">
                         <img src="/img/arrow_up.png" class="icon">
                         <img src="/img/arrow_down.png" class="icon">
@@ -45,9 +50,15 @@
 
             </div>
         }
+    }
+    else
+    {
+        <p>Keine Übungen vorhanden.</p>
+    }
     </div>
     <button class="green" type="submit">Speichern</button>
+    @Html.HiddenFor(x => x.Id)
 </form>
+<button class="green" onclick="window.location.href = '@Url.Action("Add", "Exercise", new { id = Model.Id})'">Übung hinzufügen</button>
 
 
-<button class="green" onclick="window.location.href='@Url.Action("Add", "Exercise")'" disabled>Übung hinzufügen</button>

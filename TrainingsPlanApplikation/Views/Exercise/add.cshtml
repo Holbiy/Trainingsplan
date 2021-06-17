@@ -8,7 +8,7 @@
 
 <h1>Übung hinzufügen</h1>
 <h2>Trainingsplan 1</h2>
-<form asp-action="AddExerciseToPlan" method="post">
+<form asp-action="AddExerciseToPlan" method="post" class="form">
     <label asp-for="Exercise.Title"></label>
     <input asp-for="Exercise.Title">
     <span asp-validation-for="Exercise.Title"></span>
@@ -24,6 +24,8 @@
     @*<label asp-for="Image"></label>
     <input asp-for="Image" type="file" accept="image/*" >
     <#<span asp-validation-for="Image"></span>*@
+    
+    @Html.HiddenFor(x => x.TrainingPlanId);
 
     <br>
     <button type="submit" class="green">
